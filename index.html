@@ -7,24 +7,92 @@
   <title>Charan Pokuri - Portfolio</title>
   <link rel="stylesheet" href="style.css">
   <style>
-    /* Add your custom CSS for the navigation bar here */
-    /* ... (same as previous code) ... */
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    #navbar {
+      background-color: #333;
+      color: #fff;
+      padding: 10px 0;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+    }
+
+    nav li {
+      margin-left: 20px;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 16px;
+    }
+
+    section {
+      padding: 40px 0;
+    }
+
+    h2 {
+      font-size: 32px;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
     .project-carousel {
       overflow: hidden;
       white-space: nowrap;
       transition: transform 0.3s ease;
     }
+
     .project-card {
       display: inline-block;
       margin-right: 20px;
       max-width: 300px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      padding: 10px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     }
+
+    .project-card img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 5px;
+    }
+
     footer {
       background-color: #333;
       color: #fff;
       text-align: center;
       padding: 15px 0;
     }
+
     footer p {
       margin: 0;
     }
@@ -64,36 +132,45 @@
     </header>
   </section>
 
+  <section id="about">
+    <div class="container">
+      <h2>About Me</h2>
+      <p>Hi, I'm Charan Pokuri, a web developer based in XYZ. I specialize in building modern, responsive websites
+        using the latest web technologies such as HTML5, CSS3, and JavaScript.</p>
+      <p>Some of my skills include:</p>
+      <ul>
+        <li>Responsive web design</li>
+        <li>Front-end development</li>
+        <li>Back-end development</li>
+        <li>UI/UX design</li>
+      </ul>
+    </div>
+  </section>
+
   <section id="projects">
     <div class="container">
       <h2>My Projects</h2>
       <div class="project-carousel">
         <div class="project-card">
-          <figure>
-            <img src="project1.jpg" alt="Project: E-commerce Website">
-            <figcaption>
-              <h3>E-commerce Website</h3>
-              <p>An online store built using React, Node.js, and MongoDB. It allows users to browse products, add items to the cart, and make secure payments.</p>
-            </figcaption>
-          </figure>
+          <img src="https://via.placeholder.com/300" alt="Project: E-commerce Website">
+          <div class="project-description">
+            <h3>E-commerce Website</h3>
+            <p>An online store built using React, Node.js, and MongoDB. It allows users to browse products, add items to the cart, and make secure payments.</p>
+          </div>
         </div>
         <div class="project-card">
-          <figure>
-            <img src="project2.jpg" alt="Project: Blogging Platform">
-            <figcaption>
-              <h3>Blogging Platform</h3>
-              <p>A blogging platform created with Django, where users can create and publish their blog posts and interact with other users through comments.</p>
-            </figcaption>
-          </figure>
+          <img src="https://via.placeholder.com/300" alt="Project: Blogging Platform">
+          <div class="project-description">
+            <h3>Blogging Platform</h3>
+            <p>A blogging platform created with Django, where users can create and publish their blog posts and interact with other users through comments.</p>
+          </div>
         </div>
         <div class="project-card">
-          <figure>
-            <img src="project3.jpg" alt="Project: Mobile App - Task Manager">
-            <figcaption>
-              <h3>Mobile App - Task Manager</h3>
-              <p>A mobile app built with React Native for task management. Users can create, update, and prioritize their tasks to stay organized.</p>
-            </figcaption>
-          </figure>
+          <img src="https://via.placeholder.com/300" alt="Project: Mobile App - Task Manager">
+          <div class="project-description">
+            <h3>Mobile App - Task Manager</h3>
+            <p>A mobile app built with React Native for task management. Users can create, update, and prioritize their tasks to stay organized.</p>
+          </div>
         </div>
       </div>
       <button id="prevBtn">Previous</button>
@@ -170,31 +247,27 @@
     const projectCarousel = document.querySelector('.project-carousel');
     const prevBtn = document.getElementById('prevBtn');
     const nextBtn = document.getElementById('nextBtn');
-  
-    // Set the initial position to 0 (first card)
+
     let position = 0;
-  
-    // Function to handle sliding to the next project
+
     function slideNext() {
       const cardWidth = document.querySelector('.project-card').offsetWidth;
-      position -= cardWidth;
+      position -= cardWidth + 20;
       if (position < -(cardWidth * 2)) {
         position = 0;
       }
       projectCarousel.style.transform = `translateX(${position}px)`;
     }
-  
-    // Function to handle sliding to the previous project
+
     function slidePrev() {
       const cardWidth = document.querySelector('.project-card').offsetWidth;
-      position += cardWidth;
+      position += cardWidth + 20;
       if (position > 0) {
         position = -(cardWidth * 2);
       }
       projectCarousel.style.transform = `translateX(${position}px)`;
     }
-  
-    // Add click event listeners to the previous and next buttons
+
     prevBtn.addEventListener('click', slidePrev);
     nextBtn.addEventListener('click', slideNext);
   </script>
