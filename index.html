@@ -5,28 +5,157 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Charan Pokuri - Portfolio</title>
-  <!-- Add the favicon link here -->
   <link rel="stylesheet" href="style.css">
-  <!-- Optionally, you can use a minified and combined version of your JS files -->
-  <script src="script.js"></script>
+  <style>
+    /* Add your custom CSS for the navigation bar here */
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 15px 0;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    h1 {
+      margin: 0;
+      font-size: 24px;
+    }
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+    }
+    nav ul li {
+      margin-right: 20px;
+    }
+    nav ul li:last-child {
+      margin-right: 0;
+    }
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 16px;
+    }
+    /* Hamburger menu styles for mobile */
+    .menu-toggle {
+      display: none;
+    }
+    .menu-toggle input {
+      display: none;
+    }
+    .menu-toggle label {
+      cursor: pointer;
+      display: block;
+      width: 40px;
+      height: 40px;
+      position: relative;
+      background-color: transparent;
+      border: 2px solid #fff;
+      border-radius: 4px;
+    }
+    .menu-toggle span {
+      display: block;
+      width: 30px;
+      height: 3px;
+      background-color: #fff;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    .menu {
+      display: flex;
+    }
+    .menu input:checked ~ ul {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      top: 60px;
+      left: 0;
+      background-color: #333;
+      width: 100%;
+      text-align: center;
+    }
+    .menu ul {
+      display: none;
+      flex-direction: row;
+      justify-content: flex-end;
+    }
+    .menu ul li {
+      margin: 15px;
+    }
+    @media screen and (max-width: 768px) {
+      header {
+        padding: 10px 0;
+      }
+      h1 {
+        font-size: 20px;
+      }
+      nav ul {
+        display: none;
+        flex-direction: column;
+        text-align: center;
+        background-color: #333;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+      }
+      nav ul li {
+        margin: 10px;
+      }
+      .menu-toggle {
+        display: block;
+      }
+    }
+  </style>
 </head>
 
 <body>
-  <header>
-    <div class="container">
-      <h1>Charan Pokuri</h1>
-      <nav>
-        <ul>
-          <li><a href="#about">About</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+  <section id="navbar">
+    <header>
+      <div class="container">
+        <h1>Charan Pokuri</h1>
+        <!-- Hamburger menu for mobile -->
+        <div class="menu-toggle">
+          <input type="checkbox" id="menu-checkbox">
+          <label for="menu-checkbox">
+            <span></span>
+            <span></span>
+            <span></span>
+          </label>
+          <div class="menu">
+            <ul>
+              <li><a href="#about">About</a></li>
+              <li><a href="#projects">Projects</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div>
+        </div>
+        <!-- Regular navigation menu for larger screens -->
+        <nav>
+          <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+  </section>
 
-  <main>
-    <section id="about">
+   <main>
+    <section id="about" >
   <div class="container">
     <h2>About Me</h2>
     <article>
@@ -50,31 +179,28 @@
     <div class="project-carousel">
       <div class="project-card">
         <figure>
-          <img src="project1.png" alt="Project 1">
+          <img src="https://via.placeholder.com/300" alt="Project: E-commerce Website">
           <figcaption>
-            <h3>Project 1</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor,
-              dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam.</p>
+            <h3>E-commerce Website</h3>
+            <p>An online store built using React, Node.js, and MongoDB. It allows users to browse products, add items to the cart, and make secure payments.</p>
           </figcaption>
         </figure>
       </div>
       <div class="project-card">
         <figure>
-          <img src="project2.png" alt="Project 2">
+          <img src="https://via.placeholder.com/300" alt="Project: Blogging Platform">
           <figcaption>
-            <h3>Project 2</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor,
-              dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam.</p>
+            <h3>Blogging Platform</h3>
+            <p>A blogging platform created with Django, where users can create and publish their blog posts and interact with other users through comments.</p>
           </figcaption>
         </figure>
       </div>
       <div class="project-card">
         <figure>
-          <img src="project3.png" alt="Project 3">
+          <img src="https://via.placeholder.com/300" alt="Project: Mobile App - Task Manager">
           <figcaption>
-            <h3>Project 3</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor,
-              dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam.</p>
+            <h3>Mobile App - Task Manager</h3>
+            <p>A mobile app built with React Native for task management. Users can create, update, and prioritize their tasks to stay organized.</p>
           </figcaption>
         </figure>
       </div>
