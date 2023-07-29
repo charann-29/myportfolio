@@ -5,7 +5,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Charan Pokuri - Portfolio</title>
+  <!-- Add the favicon link here -->
   <link rel="stylesheet" href="style.css">
+  <!-- Optionally, you can use a minified and combined version of your JS files -->
   <script src="script.js"></script>
 </head>
 
@@ -23,9 +25,11 @@
     </div>
   </header>
 
-  <section id="about">
-    <div class="container">
-      <h2>About Me</h2>
+  <main>
+    <section id="about">
+  <div class="container">
+    <h2>About Me</h2>
+    <article>
       <p>Hi, I'm Charan Pokuri, a web developer based in XYZ. I specialize in building modern, responsive websites
         using the latest web technologies such as HTML5, CSS3, and JavaScript.</p>
       <p>Some of my skills include:</p>
@@ -35,70 +39,75 @@
         <li>Back-end development</li>
         <li>UI/UX design</li>
       </ul>
-    </div>
-  </section>
+    </article>
+  </div>
+</section>
 
-  <section id="projects">
-    <div class="container">
-      <h2>My Projects</h2>
-      <div class="project-carousel">
-        <div class="project-card">
+
+    <section id="projects">
+  <div class="container">
+    <h2>My Projects</h2>
+    <div class="project-carousel">
+      <div class="project-card">
+        <figure>
           <img src="project1.png" alt="Project 1">
-          <div class="project-description">
+          <figcaption>
             <h3>Project 1</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor,
               dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam.</p>
-          </div>
-        </div>
-        <div class="project-card">
+          </figcaption>
+        </figure>
+      </div>
+      <div class="project-card">
+        <figure>
           <img src="project2.png" alt="Project 2">
-          <div class="project-description">
+          <figcaption>
             <h3>Project 2</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor,
               dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam.</p>
-          </div>
-        </div>
-        <div class="project-card">
+          </figcaption>
+        </figure>
+      </div>
+      <div class="project-card">
+        <figure>
           <img src="project3.png" alt="Project 3">
-          <div class="project-description">
+          <figcaption>
             <h3>Project 3</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor,
               dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam.</p>
-          </div>
-        </div>
+          </figcaption>
+        </figure>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Contact Section -->
-<section id="contact" class="bg-light">
+   <section id="contact" class="bg-light">
   <div class="container">
-    <div class="row">
-      <div class="col-lg-12 text-center">
-        <h2>Contact Me</h2>
-        <hr class="divider">
-      </div>
-    </div>
+    <h2>Contact Me</h2>
+    <hr class="divider">
     <div class="row">
       <div class="col-lg-8 mx-auto text-center">
-        <p class="mb-5">Feel free to email me to provide some feedback, ask any questions or just to say hello!</p>
-        <form>
+        <p class="mb-5">Feel free to email me to provide some feedback, ask any questions, or just to say hello!</p>
+        <form action="submit_form.php" method="post">
           <div class="row">
             <div class="col-md-6">
               <div class="form-group">
-                <input type="text" class="form-control" placeholder="Your Name *" required="required" data-validation-required-message="Please enter your name.">
+                <label for="name">Your Name *</label>
+                <input type="text" id="name" name="name" class="form-control" placeholder="Your Name *" required="required" data-validation-required-message="Please enter your name.">
               </div>
             </div>
             <div class="col-md-6">
               <div class="form-group">
-                <input type="email" class="form-control" placeholder="Your Email *" required="required" data-validation-required-message="Please enter your email address.">
+                <label for="email">Your Email *</label>
+                <input type="email" id="email" name="email" class="form-control" placeholder="Your Email *" required="required" data-validation-required-message="Please enter your email address.">
               </div>
             </div>
           </div>
           <div class="form-group">
-            <textarea class="form-control" placeholder="Your Message *" required="required" data-validation-required-message="Please enter a message."></textarea>
+            <label for="message">Your Message *</label>
+            <textarea id="message" name="message" class="form-control" placeholder="Your Message *" required="required" data-validation-required-message="Please enter a message."></textarea>
           </div>
-          <div class="clearfix"></div>
           <div class="col-lg-12 text-center">
             <div id="success"></div>
             <button type="submit" class="btn btn-primary btn-xl text-uppercase" id="sendMessageButton">Send Message</button>
@@ -107,35 +116,22 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-lg-12 text-center">
-        <ul class="list-inline mb-0">
-          <li class="list-inline-item">
-            <a href="#" class="social-link">
-              <i class="fab fa-twitter"></i>
-            </a>
-          </li>
-          <li class="list-inline-item">
-            <a href="#" class="social-link">
-              <i class="fab fa-facebook-f"></i>
-            </a>
-          </li>
-          <li class="list-inline-item">
-            <a href="#" class="social-link">
-              <i class="fab fa-linkedin-in"></i>
-            </a>
-          </li>
-        </ul>
-      </div>
+      <!-- Social media links here -->
     </div>
   </div>
 </section>
-<footer>
-  <div class="container">
-    <p>&copy; 2023 Charan Pokuri</p>
-    <ul>
-      <li><a href="#">Privacy Policy</a></li>
-      <li><a href="#">Terms of Service</a></li>
-      <li><a href="#">FAQ</a></li>
-    </ul>
-  </div>
-</footer>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2023 Charan Pokuri</p>
+      <ul>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms of Service</a></li>
+        <li><a href="#">FAQ</a></li>
+      </ul>
+    </div>
+  </footer>
+
+</body>
+
+</html>
